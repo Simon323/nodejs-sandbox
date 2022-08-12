@@ -46,7 +46,7 @@
       "name": "Node.js - nodemon",
       // "runtimeExecutable": "${workspaceFolder}\\debugging\\node_modules\\nodemon\\bin\\nodemon.js",
       "runtimeExecutable": "nodemon",
-      "program": "${workspaceFolder}\\debugging\\app.js",
+      "program": "${workspaceFolder}\\basic_node_server\\app.js",
       "restart": true,
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
