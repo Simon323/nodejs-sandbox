@@ -33,6 +33,23 @@
       "name": "Attach to next",
       "skipFiles": ["<node_internals>/**"],
       "port": 9229
+    },
+    {
+      "name": "Node.js - Debug Current File",
+      "type": "node",
+      "request": "launch",
+      "program": "${file}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Node.js - nodemon",
+      // "runtimeExecutable": "${workspaceFolder}\\debugging\\node_modules\\nodemon\\bin\\nodemon.js",
+      "runtimeExecutable": "nodemon",
+      "program": "${workspaceFolder}\\debugging\\app.js",
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }
