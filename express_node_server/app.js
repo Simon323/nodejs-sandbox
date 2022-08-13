@@ -1,8 +1,10 @@
 const http = require("http");
 const express = require("express");
 const bodyParser = require("body-parser");
-
 const app = express();
+
+const adminRoutes = require("./routes/admin");
+const shopRoutes = require("./routes/shop");
 
 // app.use("/", (req, res, next) => {
 //   console.log("This always run");
@@ -11,21 +13,11 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/add-product", (req, res, next) => {
-  console.log("This is another middleware");
-  res.send(
-    "<form action='/product' method='POST'><input type='text' name='title' /><button type='submit'>submit</button></form>"
-  );
-});
+app.use("/admin", adminRoutes);
+app.use(shopRoutes);
 
-app.post("/product", (req, res, next) => {
-  console.log(req.body);
-  res.redirect("/");
-});
-
-app.use("/", (req, res, next) => {
-  console.log("This is another middleware");
-  res.send("<h1>Hello form expres</h1>");
+app.use((req, res, next) => {
+  res.status(404).send("<h1>Page not found</h1>");
 });
 
 app.listen(3000);
