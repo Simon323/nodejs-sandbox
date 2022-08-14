@@ -12,7 +12,7 @@ const setViewEngine = (app, engineName) => {
       // Templates Engine PUG
       console.log("PUG is ViewEngine");
       app.set("view engine", "pug");
-      app.set("views", "views");
+      app.set("views", "views/pug");
       break;
     }
     case engineType.HANDLEBARS: {
@@ -20,10 +20,13 @@ const setViewEngine = (app, engineName) => {
       console.log("HANDLEBARS is ViewEngine");
       app.engine(
         "handlebars",
-        engine({ layoutsDir: "views/layouts/", defaultLayout: "main" }) //in version 6.x no need pass config object
+        engine({
+          layoutsDir: "views/handlebars/layouts/",
+          defaultLayout: "main",
+        }) //in version 6.x no need pass config object
       );
       app.set("view engine", "handlebars");
-      app.set("views", "views");
+      app.set("views", "views/handlebars");
       break;
     }
   }
