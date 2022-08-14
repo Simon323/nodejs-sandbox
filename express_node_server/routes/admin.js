@@ -15,7 +15,7 @@ router.get("/add-product", (req, res, next) => {
   // --> HTML <--
   // res.sendFile(path.join(rootDir, "views", "add-product.html"));
 
-  // --> PUG <--
+  // --> PUG / HANDLEBARS <--
   res.render("add-product", {
     pageTitle: "Add Product",
     path: "/admin/add-product",
