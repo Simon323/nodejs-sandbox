@@ -8,7 +8,7 @@ const { engineType, setViewEngine } = require("./util/viewEngine");
 
 const app = express();
 
-setViewEngine(app, engineType.HANDLEBARS);
+setViewEngine(app, engineType.EJS);
 
 // ROUTES
 const { routes } = require("./routes/admin");
