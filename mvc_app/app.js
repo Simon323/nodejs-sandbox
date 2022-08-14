@@ -11,7 +11,7 @@ const app = express();
 setViewEngine(app, engineType.EJS);
 
 // ROUTES
-const { routes } = require("./routes/admin");
+const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 // EACH TIME MIDDLEWARE
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(rootDir, "public")));
 
 // ROUTES
-app.use("/admin", routes);
+app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
