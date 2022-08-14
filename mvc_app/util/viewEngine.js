@@ -33,7 +33,7 @@ const setViewEngine = (app, engineName) => {
       // Templates Engine EJS
       console.log("EJS is ViewEngine");
       app.set("view engine", "ejs");
-      app.set("views", "views/ejs");
+      app.set("views", "views");
       break;
     }
   }
