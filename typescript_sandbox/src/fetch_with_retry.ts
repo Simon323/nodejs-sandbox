@@ -51,3 +51,5 @@ export default async function fetchWithRetry(
     `Request timed out (tried it ${options.tries} times, but none finished within ${options.timeoutInSeconds} second(s)).`
   );
 }
+
+export const __greeter = (name: string) => `Hello ${name}`;
